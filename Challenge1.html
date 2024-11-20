@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 1</title>
+</head>
+<body>
+<!-- Create a div tag with some text and an id named "goodbye".
+     Create a button that, when clicked, makes the text dissappear -->
+<div id="Goodbye">Some text</div>
+<button onclick="removeText()">Click Me to Remove the Text</button>
+<button onclick="addText()">Click Me to Add the Text</button>
+<script>
+function removeText() {
+  document.getElementById("Goodbye").style.display = "none";
+}
+function addText(){
+  document.getElementById("Goodbye").style.display = "flex";
+}
+</script>
+
+
+</body>
+</html>
