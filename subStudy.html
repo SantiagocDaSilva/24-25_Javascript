@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub Study Assignment</title>
+  <style>
+
+
+
+    #slidingBox {
+      width: 300px;
+      height: 100px;
+      background: lightcoral;
+      position: relative;
+      left: -300px;
+      transition: left 0.5s ease-in-out;
+    }
+
+    #scrollTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      padding: 10px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #hoverText {
+      transition: color 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    #collapsibleContent {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+      background: lightgray;
+      padding: 0 10px;
+    }
+    #collapsibleContent.open {
+      max-height: 200px;
+    }
+  </style>
+</head>
+<body>
+<h2>Slide Element In/Out</h2>
+<button id="slideButton">Slide Box</button>
+<div id="slidingBox"></div>
+
+
+<h2>Countdown Timer</h2>
+<div id="countdown">10</div>
+
+
+<h2>Typing Effect</h2>
+<div id="typing"></div>
+
+<h2>Collapsible Section</h2>
+<button id="collapsibleButton">Toggle Collapse</button>
+<div id="collapsibleContent">
+  <p>This is the content. Click the button to hide it</p>
+</div>
+
+
+<h2>Hover Text Effect</h2>
+<p id="hoverText">Hover over the text o change the color</p>
+
+<script>
+  // Slide Box In/Out (effect 1)
+  const slideButton = document.getElementById('slideButton');
+  const slidingBox = document.getElementById('slidingBox');
+  let isSlidIn = false;
+
+  slideButton.addEventListener('click', () => {
+    slidingBox.style.left = isSlidIn ? '-300px' : '0';
+    isSlidIn = !isSlidIn;
+  });
+
+  // Countdown Timer (effect 2)
+  const countdownDiv = document.getElementById('countdown');
+  let countdownValue = 10;
+
+  function startCountdown() {
+    const interval = setInterval(() => {
+      countdownValue--;
+      countdownDiv.textContent = countdownValue;
+
+      if (countdownValue <= 0) {
+        clearInterval(interval);
+        countdownDiv.textContent = "Time's up!";
+      }
+    }, 1000);
+  }
+  startCountdown();
+
+  //Typing Effect (effect 3)
+  const text = "Welcome to the typing effect!";
+  const typingDiv = document.getElementById('typing');
+  let index = 0;
+
+  function typeEffect() {
+    if (index < text.length) {
+      typingDiv.textContent += text[index];
+      index++;
+      setTimeout(typeEffect, 100);
+    }
+  }
+  typeEffect();
+
+  // Collapsible Section (effect 4)
+  const collapsibleButton = document.getElementById('collapsibleButton');
+  const collapsibleContent = document.getElementById('collapsibleContent');
+
+  collapsibleButton.addEventListener('click', () => {
+    collapsibleContent.classList.toggle('open');
+  });
+
+  //  Hover text  (effect 5)
+  const hoverText = document.getElementById('hoverText');
+  hoverText.addEventListener('mouseenter', () => {
+    hoverText.style.color = 'red';
+  });
+  hoverText.addEventListener('mouseleave', () => {
+    hoverText.style.color = 'black';
+  });
+</script>
+</body>
+</html>
