@@ -46,18 +46,24 @@
   </tr>
 </table>
 
-<button type="button" onclick="changeColor()">Click me to change the color of the table</button>
-<button type="button" onclick="toggle()">Toggle</button>
+<button type="button" onclick="toggle()">Click Me</button>
 
 <script>
-  function changeColor() {
-    document.getElementById("table").style.backgroundColor = "blue";
 
-  }
+  table = document.getElementById("table")
+  counter = 0;
+
   function toggle(){
+    if (counter % 2 === 0){
+      table.style.backgroundColor = "red";
+    }else{
+      table.style.backgroundColor = "blue";
+    }
 
-
+    counter++;
   }
+
+
 
 </script>
 
