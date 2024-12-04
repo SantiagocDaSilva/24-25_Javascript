@@ -3,49 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <title>Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
     table {
-      width: 50%;
-      height: 50px;
-    }
-    td {
-      text-align: center;
-    }
-    button {
-      width: 100%;
-      height: 50%;
-      font-size: 2rem;
-      padding: 20px;
+      width: auto;
+      border-collapse: collapse;
     }
 
+    td {
+      text-align: center;
+      padding: 0;
+    }
+
+    button {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+      border: 2px solid #000;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+    }
+
+
+    button:hover {
+      background-color: #808080;
+    }
   </style>
 </head>
 <body>
 <table id="table">
+  <input type="text" class="display"/>
   <tr>
-    <td><button type="button" onclick="toggle()">7</button></td>
-    <td><button type="button" onclick="toggle()">8</button></td>
-    <td><button type="button" onclick="toggle()">9</button></td>
-    <td><button type="button" onclick="toggle()">+</button></td>
+    <td><button value="7"class="btn">7</button></td>
+    <td><button value="8"class="btn">8</button></td>
+    <td><button value="9"class="btn">9</button></td>
+    <td><button value="+"class="btn">+</button></td>
   </tr>
   <tr>
-    <td><button type="button" onclick="toggle()">4</button></td>
-    <td><button type="button" onclick="toggle()">5</button></td>
-    <td><button type="button" onclick="toggle()">6</button></td>
-    <td><button type="button" onclick="toggle()">-</button></td>
+    <td><button value="4"class="btn">4</button></td>
+    <td><button value="5"class="btn">5</button></td>
+    <td><button value="6"class="btn">6</button></td>
+    <td><button value="-"class="btn">-</button></td>
   </tr>
   <tr>
-    <td><button type="button" onclick="toggle()">1</button></td>
-    <td><button type="button" onclick="toggle()">2</button></td>
-    <td><button type="button" onclick="toggle()">3</button></td>
-    <td><button type="button" onclick="toggle()">*</button></td>
+    <td><button value="1"class="btn">1</button></td>
+    <td><button value="2"class="btn">2</button></td>
+    <td><button value="3"class="btn">3</button></td>
+    <td><button value="*"class="btn">*</button></td>
+
   </tr>
   <tr>
-    <td><button type="button" onclick="toggle()">C</button></td>
-    <td><button type="button" onclick="toggle()">0</button></td>
-    <td><button type="button" onclick="toggle()">/</button></td>
-    <td><button type="button" onclick="toggle()">=</button></td>
+    <td><button value="C"class="btn">C</button></td>
+    <td><button value="0"class="btn">0</button></td>
+    <td><button value="/"class="btn">/</button></td>
+    <td><button value="="class="btn">=</button></td>
   </tr>
 </table>
+<script type="text/javascript" src="calc.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
