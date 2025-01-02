@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Hover Effect</title>
+  <style>
+    .image-container img {
+      transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+    }
+  </style>
+</head>
+<body>
+<img src="../img/guy.jpg" id="hoverImage" onmouseout = "appear()" onmouseover="dissappear()">
+
+<script>
+  function dissappear(){
+      document.getElementById('hoverImage').style.display = "none";
+  }
+  function appear(){
+    document.getElementById('hoverImage').style.display = "inline";
+  }
+</script>
+</body>
+</html>
